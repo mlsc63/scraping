@@ -113,7 +113,7 @@ def directory():
 def save_infos (infos):
     try:
       if os.path.isfile(chemin +'/catégories/' + infos[2] +'.csv'):
-          s
+          
           with open('catégories/' + infos[2]+".csv","a",newline="", encoding="utf-8") as f:
               ecriture = csv.writer(f)
               ecriture.writerow([infos[0], infos[3], infos[1], infos[4], infos[5], infos[6], infos[8], infos[2], infos[7], infos[9]])
