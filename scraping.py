@@ -6,7 +6,6 @@ import urllib.request
 import re
 import os
 
-chemin = os.getcwd()
 host = 'http://books.toscrape.com/catalogue'
 
 def connect (url):
@@ -103,16 +102,15 @@ def get_cat(url4):
 
 def directory():
     try:
-       path = os.getcwd()
-       print(path)
-       os.mkdir(path + '\images')
-       os.mkdir(path + '\catégories')
+      
+       os.mkdir('./images')
+       os.mkdir('./catégories')
     except:
         pass
 
 def save_infos (infos):
     try:
-      if os.path.isfile(chemin +'/catégories/' + infos[2] +'.csv'):
+      if os.path.isfile('/catégories/' + infos[2] +'.csv'):
           
           with open('catégories/' + infos[2]+".csv","a",newline="", encoding="utf-8") as f:
               ecriture = csv.writer(f)
