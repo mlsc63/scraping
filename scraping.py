@@ -10,6 +10,7 @@ host = 'http://books.toscrape.com/catalogue'
 
 
 def connect(url):
+    soup = ()
     try:
         response = requests.get(url)
         if response.ok:
@@ -91,7 +92,7 @@ def get_cat(url4):
     all_categories = []
     soup = connect(url4)
     try:
-        cats = soup.find('ul', {'class': 'nav nav-list'}).findAll('li')[1:]  # on dicrimine le premier élément
+        cats = soup.find('ul', {'class': 'nav nav-list'}).findAll('li')[1:]
         for i in cats:
             all_categories.append(url4 + i.find('a')['href'])
         return all_categories
